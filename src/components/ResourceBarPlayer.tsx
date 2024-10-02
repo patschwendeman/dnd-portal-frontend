@@ -5,13 +5,13 @@ import styled from 'styled-components'
 const ResourceBar = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.secondary};
-  border-bottom: 5px solid ${(props) => props.theme.colors.border};
-  border-top: 5px solid ${(props) => props.theme.colors.border};
+  border-bottom: 2px solid ${(props) => props.theme.colors.border};
+  border-top: 2px solid ${(props) => props.theme.colors.border};
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   @media (max-width: 649px) {
     margin-bottom: 20px;
   }
@@ -31,7 +31,7 @@ const Text = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 
   @media (max-width: 739px) {
     font-size: 10px !important;
@@ -43,7 +43,7 @@ const Text = styled.div`
 
 const SpellResource = styled.div`
   width: 80px;
-  height: 50px;
+  height:40px;
   border-radius: 100px;
   display: flex;
   align-items: center;
@@ -72,13 +72,13 @@ const SpellResource = styled.div`
 
 const Resource = styled.div<{ $variant: 'action' | 'bonus' | 'movement' | 'special' }>`
   width: 80px;
-  height: 50px;
+  height: 40px;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
   color: #9e998a;
   cursor: pointer;
   z-index: 99;
@@ -126,8 +126,8 @@ const Resource = styled.div<{ $variant: 'action' | 'bonus' | 'movement' | 'speci
 `
 
 const IconSection = styled.div`
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -149,7 +149,7 @@ const BonusIcon = styled.div<{$bonusAction: number}>`
   height: 0;
   -webkit-transform: rotate(360deg);
   border-style: solid;
-  border-width: 0 12px 22px 12px;
+  border-width: 0 11px 19px 11px;
   border-color: transparent transparent ${(props) => props.$bonusAction > 0 ? '#b23700' : '#232321'} transparent;
 
   @media (max-width: 649px) {

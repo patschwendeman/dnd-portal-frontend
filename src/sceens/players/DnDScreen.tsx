@@ -6,32 +6,36 @@ import settingsIcon from '/settings.svg'
 
 import { ResourceBarPlayer } from '../../components/ResourceBarPlayer'
 import { SliderPlayer } from '../../components/SliderPlayer'
+import { SpellBarPlayer } from '../../components/SpellbarPlayer'
 
 
 const Background = styled.div`
   display: flex;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  background-color: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text.color};
+  user-select: none;
+  @media (max-width: 649px) {
+    align-items: end;
+    flex-direction: row;
     justify-content: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-    background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text.color};
-    user-select: none;
-    @media (max-width: 649px) {
-      align-items: end;
-    }
+  }
 `
 
 const ThemeToggleButton = styled.button`
     position: fixed;
     left: 12px;
-    top: 12px;
+    top: 50%;
     display: flex;
     padding: 6px;
     width: 40px;
@@ -46,13 +50,14 @@ const ThemeToggleButton = styled.button`
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 100%;
-    height: 100%;
     }
     svg {
       width: 100%;
       height: 100%; 
     }
+    @media (max-width: 649px) {
+      top: 12px;
+  }
 `
 
 interface DnDScreenProps {
@@ -64,7 +69,7 @@ const DnDScreen: FunctionComponent<DnDScreenProps> = ({ toggleTheme }): ReactEle
 
   return (
   <Background>
-      <SliderPlayer />
+    <SliderPlayer />
     <ThemeToggleButton onClick={toggleTheme}>
         <ReactSVG
           src={settingsIcon}
@@ -73,6 +78,7 @@ const DnDScreen: FunctionComponent<DnDScreenProps> = ({ toggleTheme }): ReactEle
           }}
       />
     </ThemeToggleButton>
+    <SpellBarPlayer />
     <ResourceBarPlayer />
   </Background>
   )
