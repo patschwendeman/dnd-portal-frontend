@@ -62,7 +62,6 @@ jobs:
             --tag ghcr.io/${{ github.repository_owner }}/react-app:amd64-${{ github.sha }} \
             --tag ghcr.io/${{ github.repository_owner }}/react-app:amd64-latest \
             --push .
-            --progress=plain
 
       - name: Check Docker cache
         run: ls -la /tmp/.buildx-cache
@@ -125,7 +124,6 @@ jobs:
             --tag ghcr.io/${{ github.repository_owner }}/react-app:arm64-${{ github.sha }} \
             --tag ghcr.io/${{ github.repository_owner }}/react-app:arm64-latest \
             --push .
-            --progress=plain
 
       - name: Check Docker cache
         run: ls -la /tmp/.buildx-cache
