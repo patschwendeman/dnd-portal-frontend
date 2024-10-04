@@ -13,6 +13,7 @@ import { Map, SceneDetail } from '../models/models'
 import { getAdminData, getSceneById, handleDialogue } from '../service/adminScreen'
 import { filterSceneByKey } from '../utils/utils'
 
+
 const Screen = styled.div`
     display: flex;
     width: 100%;
