@@ -187,6 +187,8 @@ const AdminScreen: FunctionComponent<AdminScreenProps> = ({ toggleTheme, isDarkT
     }, [activeSceneId])
 
     const handleSceneSelection = (mapId: number, isMainMap: boolean) => {
+        console.log('handleSceneSelection called with:', { mapId, isMainMap })
+        console.log(scenesDetails)
         let scene
         if(isMainMap === true) {
             scene = filterSceneByKey('battlemaps_id', mapId, scenesDetails)
@@ -197,6 +199,7 @@ const AdminScreen: FunctionComponent<AdminScreenProps> = ({ toggleTheme, isDarkT
         if (!scene) {
             throw new Error('No Scene to select not found')
         }
+        console.log(scene)
         setDialogueVisibility(true)
         setSceneOption(scene)
     }

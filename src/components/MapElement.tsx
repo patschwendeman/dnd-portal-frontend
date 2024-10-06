@@ -19,6 +19,7 @@ const MapContainer = styled.div<{ $isActive: boolean, $isMainMap: boolean }>`
     border-style: solid;
     border: 1px solid ${props => props.$isActive ? props.theme.colors.primary : props.theme.colors.border};
     box-shadow: ${props => props.$isActive ? '0 0 10px' + props.theme.colors.primary : 'none'};
+    z-index: 1000;
 `
 
 const MapImage = styled.img`
